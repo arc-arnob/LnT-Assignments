@@ -4,7 +4,7 @@
 #include "stdlib.h"
 #include "time.h"
 int arr[10];
-int main(int argc, char* argv[]) {
+void main(int argc, char* argv[]) {
   int *parr;
   int len=10, sum=0; // initialied to 0
   if(argc > 1)
