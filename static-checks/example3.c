@@ -2,6 +2,7 @@
 
 int main(int argc, char* argv[]) {
   int *parr;
+  int remove;
   int len=10,sum=0;
   parr = malloc(len * sizeof(int));
   srand(time(0));
