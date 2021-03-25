@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
     sum += parr[i];
   
   printf("%d %d", arr[9], sum);
+  free(parr);
   return 0;
 }
 // cppcheck --enable=all example1.c
