@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
   for(int i=0;i<len;i++)
     parr[i] = rand()%100;
   
-  int val = parr[15];      
+  int val = parr[9];  // will give error as soon as accessing 11th block    
  
   for(int i=0;i<len;i++)
     sum += parr[i];

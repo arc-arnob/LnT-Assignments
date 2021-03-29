@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[]) {
   int *parr;
-  int len=10, sum;
+  int len=10, sum=0;
   parr = malloc(len * sizeof(int));
   srand(time(0));
   for(int i=0;i<len;i++)
@@ -11,6 +11,6 @@ int main(int argc, char* argv[]) {
     sum += parr[i];
   free(parr);
   printf("Hello\n");
-  free(parr);               
+  // free(parr); dual free              
   return 0;
 }

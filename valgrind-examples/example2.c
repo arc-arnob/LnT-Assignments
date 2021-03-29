@@ -6,7 +6,7 @@
 
 int main(int argc, char* argv[]) {
   int *parr;
-  int len=10,sum;
+  int len=10,sum=0;
   if(argc > 1)
     len = strtoul(argv[1],NULL,10);
   
@@ -18,9 +18,9 @@ int main(int argc, char* argv[]) {
   for(int i=0;i<len;i++)
     sum += parr[i];
   
-  free(parr);
-  
   parr[5] = 50;     
+  free(parr); // freeing and then reaccesing in next line
+  
   printf("Thank You\n");
   return 0;
 }
