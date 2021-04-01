@@ -4,12 +4,12 @@ error_t count_by_color(box *start, color_data *color_data, color_b color){
 
     box *ptr;
     ptr = start;
-    int num = 0;
+    
     if(start == NULL){
         return NO_HEAD_EXIST;
     }
     else{
-    
+        int num = 0;
         while(ptr != NULL){
             if(ptr->color == color){
                 num+=1;

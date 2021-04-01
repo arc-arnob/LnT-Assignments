@@ -14,7 +14,7 @@
 #define __PROTOTYPES_H__
 
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include<malloc.h>
 
 /**
@@ -170,6 +170,10 @@ error_t update_weight(box *, int, float);
  * @return error_t 
  */
 error_t delete_box(box *, int);
+
+void delete_all(box *);
+
+box *delete_beg( box *);
 
 #endif
 

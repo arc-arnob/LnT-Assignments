@@ -10,7 +10,7 @@ box *create_ll(box *start,
                 color_b color)
 {
 
-    box *new_box, *ptr;
+    box *new_box;
     new_box = (box *)malloc(sizeof(box));
 
     new_box->uniq_id = id;
@@ -27,6 +27,7 @@ box *create_ll(box *start,
     }
     else{
         insert_end(start,id,length,breadth,weight,height,color);
+        free(new_box);
         return start;
     }
 
