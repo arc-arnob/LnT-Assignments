@@ -171,8 +171,18 @@ error_t update_weight(box *, int, float);
  */
 error_t delete_box(box *, int);
 
+/**
+ * @brief Deletes all the nodes
+ * @param[in]  box * Pointer to start node
+ * 
+ */
 void delete_all(box *);
 
+/**
+ * @brief Deletes one node from the beginning
+ * @param[in]  box * Pointer to start node
+ * @return box* 
+ */
 box *delete_beg( box *);
 
 #endif
