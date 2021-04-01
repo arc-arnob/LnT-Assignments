@@ -2,15 +2,16 @@
 
 error_t avg_volume(box *start, average_vol_data *avg_data){
 
-    float sum = 0;
-    float avg;
-    int num = 0;
+    
     box *ptr;
     ptr = start;
     if(start == NULL){
         return NO_HEAD_EXIST;
     }
     else{
+        float sum = 0;
+        float avg;
+        int num = 0;
         while(ptr != NULL){
             float volume = (ptr->length * ptr->breadth * ptr->height);
             sum+=volume;
