@@ -28,6 +28,10 @@ typedef enum error_t{
     NO_HEAD_EXIST=2
 }error_t;
 
+/**
+ * @brief Maps Colors to ints
+ * 
+ */
 typedef enum color_b{
     RED = 0,
     GREEN,
@@ -80,9 +84,15 @@ typedef struct max_height_data{
 
 
 /**
- * @brief Create a box object
- * @param[in]  box * Pointer to start node
- * @return error_t 
+ * @brief Create a linked list object
+ * @param[in] box *  Pointer to head node
+ * @param[in] int  id of box
+ * @param[in] float  length of box
+ * @param[in] float  height of box
+ * @param[in] float  weight of box
+ * @param[in] float  breadth of box
+ * @param[in] color_b color of box
+ * @return box* 
  */
 box *create_ll(box *, int, float, float, float, float, color_b);
 
@@ -95,13 +105,20 @@ error_t display_ll(box *);
 
 /**
  * @brief Add a new box at the end
- * @param[in]  box * Pointer to start node
- * @return error_t 
+ * @param[in] box *  Pointer to head node
+ * @param[in] int  id of box
+ * @param[in] float  length of box
+ * @param[in] float  height of box
+ * @param[in] float  weight of box
+ * @param[in] float  breadth of box
+ * @param[in] color_b color of box
  */
 error_t insert_end(box *, int, float, float, float, float, color_b);
 /**
  * @brief finds a box by Id
  * @param[in]  box * Pointer to start node
+ * @param[out]  box * Pointer to result node
+ * @param[in]  int id to be found
  * @return error_t 
  */
 error_t find_by_id(box *, int, box *);
@@ -109,6 +126,8 @@ error_t find_by_id(box *, int, box *);
 /**
  * @brief counts all boxes of specific color
  * @param[in]  box * Pointer to start node
+ * @param[out]  color_data * Pointer to result enum
+ * @param[in] color_b color
  * @return error_t 
  */
 error_t count_by_color(box *, color_data *, color_b);
@@ -116,6 +135,7 @@ error_t count_by_color(box *, color_data *, color_b);
 /**
  * @brief find average volume of all boxes
  * @param[in]  box * Pointer to start node
+ * @param[out] average_vol_data * Pointer to result struct
  * @return error_t 
  */
 error_t avg_volume(box *, average_vol_data *);
@@ -123,6 +143,7 @@ error_t avg_volume(box *, average_vol_data *);
 /**
  * @brief find difference between max and min volume
  * @param[in]  box * Pointer to start node
+ * @param[out]  float * Pointer to resultant difference
  * @return error_t 
  */
 error_t min_max_v_diff(box *, float *);
@@ -130,18 +151,22 @@ error_t min_max_v_diff(box *, float *);
 /**
  * @brief Finds maximum height box
  * @param[in]  box * Pointer to start node
+ * @param[out] max_height_data * Pointer to resultant structure
  * @return error_t 
  */
 error_t find_max_height(box *, max_height_data *);
 /**
  * @brief Updates weight of a box by id
  * @param[in]  box * Pointer to start node
+ * @param[in]  int   id to be found
+ * @param[in]  box   weight to be updated
  * @return error_t 
  */
 error_t update_weight(box *, int, float);
 /**
  * @brief deletes a box
  * @param[in]  box * Pointer to start node
+ * @param[in]  int   id to be deleted
  * @return error_t 
  */
 error_t delete_box(box *, int);
