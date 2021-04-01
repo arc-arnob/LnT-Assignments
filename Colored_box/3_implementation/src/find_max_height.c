@@ -10,8 +10,9 @@ error_t find_max_height(box *start, max_height_data *data){
     else{
         int id;
         float max_height = -1;
-        float curr_height;
+        
         while(ptr != NULL){
+            float curr_height;
             curr_height = ptr->height;
         
             if(curr_height > max_height){

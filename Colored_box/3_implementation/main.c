@@ -21,6 +21,9 @@ int main(){
     error_t code_12 = min_max_v_diff(start, &diff);
     error_t code_13 = update_weight(start, 2, 1000);
     error_t code_14 = display_ll(start);
+    
+    delete_all(start);
+    
 
 
     return 0;

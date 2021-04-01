@@ -20,6 +20,7 @@ error_t insert_end(box *start,
     new_box->next = NULL;
 
     if(start == NULL){
+        free(new_box);
         return NO_HEAD_EXIST;
     }
     else{

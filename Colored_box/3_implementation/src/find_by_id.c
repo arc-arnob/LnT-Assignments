@@ -4,11 +4,12 @@ error_t find_by_id(box *start, int id, box *res){
 
     box *ptr;
     ptr = start;
-    int found = 0;
+   
     if(start == NULL){
         return NO_HEAD_EXIST;
     }
     else{
+        int found = 0;
         while(ptr != NULL){
             if(ptr->uniq_id == id){
                 found = 1;
