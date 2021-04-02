@@ -10,17 +10,97 @@ int main(){
     max_height_data data ={0};
     float diff = 0;
 
+    // Declaring Function Pointers
+    box *(*fptr_type1)(box *, int, float, float, float, float, color_b) = create_ll;
+    error_t (*fptr_type2)(box *, int, float, float, float, float, color_b) = insert_end;
+    error_t (*fptr_type3)(box *) = display_ll;
+    error_t (*fptr_type4)(box *, average_vol_data *) = avg_volume;
+    error_t (*fptr_type5)(box *, color_data *, color_b) = count_by_color;
+    error_t (*fptr_type6)(box *, int, box *) = find_by_id;
+    error_t (*fptr_type7)(box *, max_height_data *) = find_max_height;
+    error_t (*fptr_type8)(box *, float *diff) = min_max_v_diff;
+    error_t (*fptr_type9)(box *, int, float) = update_weight;
+
+
     start = create_ll(start,1,1,1,1,1,GREEN);
-    error_t code_2 = insert_end(start,2,3,4,5,6,GREEN);
-    error_t code_61 = insert_end(start,100,100,100,100,100,GREEN);
-    error_t code_7 = display_ll(start);
-    error_t code_8 = avg_volume(start,&avg_data);
-    error_t code_9 = count_by_color(start,&col_data,GREEN);
-    error_t code_10 = find_by_id(start,3,&res);
-    error_t code_11 = find_max_height(start,&data);
-    error_t code_12 = min_max_v_diff(start, &diff);
-    error_t code_13 = update_weight(start, 2, 1000);
-    error_t code_14 = display_ll(start);
+
+    int choice;
+    while(1)
+    {
+        printf("Press 1 create a Linked List\n");
+        printf("Press 2 to Insert a box at the end\n");
+        printf("Press 3 find Average volume of all boxes\n");
+        printf("Press 4 Count boxes by a given color\n");
+        printf("Press 5 to Delete a box\n");
+        printf("Press 6 to find a box by id\n");
+        printf("Press 7 find box with max height\n");
+        printf("Press 8 find min max volume diff\n");
+        printf("Press 9 update weight of a box\n");
+        printf("Press 10 to display everthing\n");
+        printf("Press -1 to exit.\n");
+        printf("Enter your choice\n");
+        scanf("%d", &choice);
+
+        if(choice == -1){
+            break;
+        }
+
+        if (choice >= 1 && choice <= 10)
+        {   
+            int id;
+            float length,breadth,height,weight;
+            color_b color;
+           
+        
+            printf("%d is the choice ", choice);
+            if(choice == 1){
+                printf("Enter Id of box\n");
+                scanf("%d",&id);
+                printf("Enter Length of box\n");
+                scanf("%f",&length);
+                printf("Enter breadth of box\n");
+                scanf("%f",&breadth);
+                printf("Enter height of box\n");
+                scanf("%f",&height);
+                printf("Enter weight of box\n");
+                scanf("%f",&weight);
+                printf("Enter color of box 1 for RED blah blah...\n");
+                scanf("%d",&color);
+                start = (*fptr_type1)(start,id,length,breadth,height,weight,color);
+            }
+            if(choice == 2){
+                printf("Enter Id of box\n");
+                scanf("%d",&id);
+                printf("Enter Length of box\n");
+                scanf("%f",&length);
+                printf("Enter breadth of box\n");
+                scanf("%f",&breadth);
+                printf("Enter height of box\n");
+                scanf("%f",&height);
+                printf("Enter weight of box\n");
+                scanf("%f",&weight);
+                printf("Enter color of box 1 for RED blah blah...\n");
+                scanf("%d",&color);
+                error_t code = (*fptr_type2)(start,id,length,breadth,height,weight,color);
+                printf("Added Successfully\n");
+            
+            }
+            if(choice == 3){
+                (*fptr_type4)(start, &avg_data);
+                printf("Average Volume of %d boxes are %f", avg_data.average, avg_data.average);
+            }
+            if(choice == 10){
+
+                (*fptr_type3)(start);
+        
+            }
+        }
+
+        
+  
+  
+  
+    }
     
     delete_all(start);
     
@@ -28,4 +108,5 @@ int main(){
 
     return 0;
 
+    
 }

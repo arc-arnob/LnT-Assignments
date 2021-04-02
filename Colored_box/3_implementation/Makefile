@@ -19,7 +19,7 @@ INC_H = inc
 INC_T = unity
 
 run:
-	gcc -I $(INC_H) $(SRC) main.c -o $(PROJ_NAME).out
+	gcc -I $(INC_H) $(SRC) main.c -o $(PROJ_NAME).exe
 test:
 	gcc -I $(INC_H) -I $(INC_T) $(TEST_SRC) $(SRC) -o $(TEST_PROJ_NAME).out
 
