@@ -20,7 +20,7 @@ int main(){
     error_t (*fptr_type7)(box *, max_height_data *) = find_max_height;
     error_t (*fptr_type8)(box *, float *diff) = min_max_v_diff;
     error_t (*fptr_type9)(box *, int, float) = update_weight;
-
+    error_t (*fptr_type10)(box *, int) = delete_box;
 
     start = create_ll(start,1,1,1,1,1,GREEN);
 
@@ -89,6 +89,28 @@ int main(){
                 (*fptr_type4)(start, &avg_data);
                 printf("Average Volume of %d boxes are %f", avg_data.average, avg_data.average);
             }
+            if(choice ==  4){
+                printf("Enter color of box 1 for RED blah blah...\n");
+                scanf("%d",&color);
+                (*fptr_type5)(start,&col_data, color);
+                printf("Boxes with color %s are %d", col_data.color, col_data.num);
+            }
+
+            if(choice == 5){
+                printf("Enter Id of box you want to delete\n");
+                scanf("%d",&id);
+                (*fptr_type10)(start, id);
+                printf("Deleted\n");
+            }
+
+            if(choice == 6){
+                printf("Enter Id of box you want to find\n");
+                scanf("%d",&id);
+                (*fptr_type6)(start,id,&res);
+                printf("Box with id %d is %s\n",res.uniq_id, (res.uniq_id==-1)?"Not Found" : "Found");
+            }
+
+            // Rest are similar -- 7,8,9.
             if(choice == 10){
 
                 (*fptr_type3)(start);
